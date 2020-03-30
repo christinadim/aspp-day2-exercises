@@ -1,0 +1,33 @@
+Line #    Mem usage    Increment   Line Contents
+================================================
+     6   36.172 MiB   35.629 MiB   @profile
+     7                             def matrix_creator(rows,columns):
+     8   36.172 MiB    0.000 MiB       matrix = []
+     9   36.773 MiB    0.000 MiB       for i in range(rows):
+    10   36.773 MiB    0.004 MiB           matrix.append([random.randint(0,100) for r in range(columns)])
+    11   36.773 MiB    0.000 MiB       return(matrix)
+
+
+Filename: matmult_edit.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13   36.773 MiB   36.773 MiB   @profile
+    14                             def multiplication_of_matrix(matrix1,matrix2):
+    15   36.773 MiB    0.000 MiB       if len(matrix1) == len(matrix2):
+    16   36.773 MiB    0.000 MiB           matrix3 = []
+    17   37.391 MiB    0.000 MiB           for i in range(len(matrix1)):
+    18   37.391 MiB    0.008 MiB               matrix3.append([random.randint(0,0) for r in range(len(matrix2[0]))])
+    19   37.930 MiB    0.000 MiB           for i in range(len(matrix1)):
+    20                                         # iterate through columns of Y
+    21   37.930 MiB    0.000 MiB               for j in range(len(matrix2[0])):
+    22                                             # iterate through rows of Y
+    23   37.930 MiB    0.000 MiB                   for k in range(len(matrix2)):
+    24   37.930 MiB    0.004 MiB                       matrix3[i][j] += X[i][k] * Y[k][j]
+    25                             
+    26                                 else:
+    27                                     print("the columns of matrix1", len(matrix1)," are different from the rows of matrix2 ", len(matrix2))
+    28                             
+    29   20.023 MiB    0.000 MiB       return(matrix3)
+
+
